@@ -8,6 +8,8 @@ markmap:
       placement: center
 ---
 
+# digi-lab.io | Git Crypt Guide v1.3.1
+
 A comprehensive guide for implementing Git-Crypt with GPG encryption for secure repository management.
 
 ## Table of Contents
