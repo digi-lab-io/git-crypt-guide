@@ -1,4 +1,4 @@
-# GPG Key Management Guide
+# digi-lab.io | Git-Crypt Guide v1.1.0
 
 A comprehensive guide for creating, managing, and using GPG keys for encryption, signing, and authentication.
 
@@ -21,6 +21,33 @@ GNU Privacy Guard (GPG) is a free implementation of the OpenPGP standard that al
 - ✍️ **Digital signatures** for authenticity
 - 🔑 **Key management** for secure communications
 - 🛡️ **Git commit signing** for code integrity
+
+## Workflow Overview
+
+```mermaid
+flowchart TD
+    A[📋 Prerequisites Check] --> B{GPG Installed?}
+    B -->|No| C[🔧 Install GPG]
+    B -->|Yes| D{GPG Key Exists?}
+    C --> D
+    D -->|No| E[🔑 Generate GPG Key]
+    D -->|Yes| F[📤 Export Public Key]
+    E --> G[✅ Verify Key Creation]
+    G --> F
+    F --> H[📁 Setup Git Repository]
+    H --> I[🔒 Install git-crypt]
+    I --> J[⚙️ Initialize git-crypt]
+    J --> K[👤 Add GPG User]
+    K --> L[📝 Configure .gitattributes]
+    L --> M[💾 Commit Configuration]
+    M --> N[🔐 Add Encrypted Files]
+    N --> O[✨ Ready for Team Collaboration]
+    
+    style A fill:#e1f5fe
+    style E fill:#fff3e0
+    style J fill:#f3e5f5
+    style O fill:#e8f5e8
+```
 
 ## Installation
 
