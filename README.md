@@ -1,23 +1,39 @@
-# digi-lab.io | Git Crypt Guide v1.2.0
+---
+title: "digi-lab.io | Git Crypt Guide v1.3.0"
+markmap:
+   colorFreezeLevel: 2
+   initialExpandLevel: 2
+   maxWidth: 300
+   activeNode:
+      placement: center
+---
 
 A comprehensive guide for implementing Git-Crypt with GPG encryption for secure repository management.
 
 ## Table of Contents
 
-- [What is Git-Crypt?](#what-is-git-crypt)
-- [Prerequisites](#prerequisites)
-- [Secret Scanning](#secret-scanning)
-- [What is GPG?](#what-is-gpg)
-- [Workflow Overview](#workflow-overview)
-- [Installation](#installation)
-- [Creating GPG Keys](#creating-gpg-keys)
+### 🚀 Quick Start (For the Impatient)
 
-- [Managing Existing Keys](#managing-existing-keys)
-- [Key Operations](#key-operations)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
-- [Additional Resources](#additional-resources)
-- [Quick Reference](#quick-reference)
+- [Installation](#installation) - Get GPG and git-crypt installed
+- [Creating GPG Keys](#creating-gpg-keys) - Generate your encryption keys
+- [Secret Scanning](#secret-scanning) - Check for existing secrets
+- [Quick Reference](#quick-reference) - Essential commands cheat sheet
+
+### 📚 Complete Guide
+
+- [What is Git-Crypt?](#what-is-git-crypt) - Understanding the tool
+- [Prerequisites](#prerequisites) - What you need before starting
+- [What is GPG?](#what-is-gpg) - Understanding encryption fundamentals
+- [Workflow Overview](#workflow-overview) - Visual process flow
+- [Installation](#installation) - Platform-specific setup
+- [Creating GPG Keys](#creating-gpg-keys) - Key generation and verification
+- [Managing Existing Keys](#managing-existing-keys) - Import/export operations
+- [Key Operations](#key-operations) - Advanced key management
+- [Secret Scanning](#secret-scanning) - Security scanning with Trivy
+- [Best Practices](#best-practices) - Security recommendations
+- [Troubleshooting](#troubleshooting) - Common issues and solutions
+- [Additional Resources](#additional-resources) - External documentation
+- [Quick Reference](#quick-reference) - Command reference
 
 ## What is Git-Crypt?
 
