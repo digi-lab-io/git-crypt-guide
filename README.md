@@ -1,17 +1,41 @@
-# digi-lab.io | Git-Crypt Guide v1.1.0
+# digi-lab.io | Git Crypt Guide v1.2.0
 
-A comprehensive guide for creating, managing, and using GPG keys for encryption, signing, and authentication.
+A comprehensive guide for implementing Git-Crypt with GPG encryption for secure repository management.
 
 ## Table of Contents
 
+- [What is Git-Crypt?](#what-is-git-crypt)
+- [Prerequisites](#prerequisites)
+- [Secret Scanning](#secret-scanning)
 - [What is GPG?](#what-is-gpg)
+- [Workflow Overview](#workflow-overview)
 - [Installation](#installation)
 - [Creating GPG Keys](#creating-gpg-keys)
+
 - [Managing Existing Keys](#managing-existing-keys)
 - [Key Operations](#key-operations)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
 - [Additional Resources](#additional-resources)
+- [Quick Reference](#quick-reference)
+
+## What is Git-Crypt?
+
+Git-Crypt enables transparent encryption and decryption of files in a Git repository. It allows you to:
+
+- 🔐 **Encrypt sensitive files** automatically during commits
+- 🔓 **Decrypt files** transparently when authorized
+- 👥 **Share repositories** with encrypted secrets
+- 🔑 **Manage access** using GPG keys
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- Git installed and configured
+- Basic understanding of Git workflows
+- Administrative access to install software
+- Team members' GPG public keys (for collaboration)
 
 ## What is GPG?
 
@@ -338,6 +362,22 @@ Name-Email: john.doe@personal.com
 4. **Renewal**: Update before expiration
 5. **Revocation**: Revoke if compromised
 6. **Backup**: Maintain secure backups
+
+## Secret Scanning
+
+Before implementing git-crypt, it's important to scan your repository for existing secrets that may have been accidentally committed.
+
+📖 **For comprehensive secret scanning guidance, see our dedicated guide:**
+👉 **[Secret Scanning with Trivy](git-secret-scan.md)**
+
+This guide covers:
+
+- 🔍 Installing and configuring Trivy
+- 🕵️ Advanced scanning techniques
+- 🧹 Pre-commit integration
+- 🔧 Remediation workflows
+- 📊 Reporting and monitoring
+- 💡 Best practices for teams
 
 ## Troubleshooting
 
