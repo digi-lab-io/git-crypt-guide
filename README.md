@@ -57,25 +57,9 @@ sudo port install gnupg2
 > **⚠️ Important: One-Time Setup**  
 > Creating a GPG key is a **one-time configuration** that establishes your cryptographic identity. Once created, you'll use this same key pair for all your encryption, signing, and authentication needs. Choose your settings carefully as changing them later requires generating a new key and redistributing your public key to all contacts and services.
 
-### 🚀 Interactive Key Generation (Recommended)
-
-The easiest and most secure way to create a GPG key:
-
-```bash
-gpg --full-generate-key
-```
-
-Follow the prompts to:
-
-1. Select key type (choose RSA and RSA)
-2. Choose key size (8192 bits for maximum security, 4096 minimum)
-3. Set expiration date (recommended: 2 years)
-4. Enter your name and email address
-5. Set a strong passphrase
-
 ### 🤖 Automated Key Generation (High Security)
 
-For automated setups with secure passphrase handling:
+The easiest and most secure way to create a GPG key for setups with secure passphrase handling:
 
 ```bash
 gpg --batch --gen-key <<EOF
