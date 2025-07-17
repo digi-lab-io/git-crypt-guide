@@ -57,9 +57,9 @@ sudo port install gnupg2
 > **⚠️ Important: One-Time Setup**  
 > Creating a GPG key is a **one-time configuration** that establishes your cryptographic identity. Once created, you'll use this same key pair for all your encryption, signing, and authentication needs. Choose your settings carefully as changing them later requires generating a new key and redistributing your public key to all contacts and services.
 
-### 🚀 Quick Key Generation (Interactive)
+### 🚀 Interactive Key Generation (Recommended)
 
-The easiest way to create a GPG key is using the interactive mode:
+The easiest and most secure way to create a GPG key:
 
 ```bash
 gpg --full-generate-key
@@ -68,50 +68,32 @@ gpg --full-generate-key
 Follow the prompts to:
 
 1. Select key type (choose RSA and RSA)
-2. Choose key size (4096 bits recommended)
+2. Choose key size (8192 bits for maximum security, 4096 minimum)
 3. Set expiration date (recommended: 2 years)
 4. Enter your name and email address
 5. Set a strong passphrase
 
-### 🤖 Automated Key Generation (Batch Mode)
+### 🤖 Automated Key Generation (High Security)
 
-For automated setups or consistent configurations:
+For automated setups with secure passphrase handling:
 
 ```bash
 gpg --batch --gen-key <<EOF
 Key-Type: RSA
-Key-Length: 4096
+Key-Length: 8192
 Subkey-Type: RSA
-Subkey-Length: 4096
+Subkey-Length: 8192
 Name-Real: Your Name
 Name-Email: your.email@domain.com
 Expire-Date: 2y
 Key-Usage: sign
 Subkey-Usage: encrypt
-Passphrase: your-secure-passphrase
+%ask-passphrase
 %commit
 EOF
 ```
 
-### 🔒 High-Security Key Generation
-
-For maximum security (no passphrase protection - use with caution):
-
-```bash
-gpg --batch --gen-key <<EOF
-Key-Type: RSA
-Key-Length: 4096
-Subkey-Type: RSA
-Subkey-Length: 4096
-Name-Real: Your Name
-Name-Email: your.email@domain.com
-Expire-Date: 0
-Key-Usage: sign
-Subkey-Usage: encrypt
-%no-protection
-%commit
-EOF
-```
+> **Note**: The `%ask-passphrase` directive will prompt you to enter a passphrase securely during key generation.
 
 ### ✅ Verify Key Creation
 
@@ -306,9 +288,15 @@ gpg --verify file.txt.asc
 ### 🔒 Security Recommendations
 
 1. **Key Strength**:
-   - Use 4096-bit RSA keys minimum
+   - Use 8192-bit RSA keys for maximum security (4096 minimum)
    - Set expiration dates (1-2 years recommended)
    - Use strong passphrases
+
+   > **Key Length Trade-offs**:
+   >
+   > - **4096-bit**: Good balance of security and performance (widely supported)
+   > - **8192-bit**: Maximum security but slower operations and larger key files
+   > - **16384-bit**: Overkill for most use cases, very slow performance
 
 2. **Key Management**:
    - Backup private keys securely
