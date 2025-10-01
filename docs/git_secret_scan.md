@@ -1,4 +1,4 @@
-# digi-lab.io | Git Secret Scanning with Trivy v1.0.1
+# digi-lab.io | Git Secret Scanning with Trivy v1.0.2
 
 Before implementing git-crypt, it's essential to scan your repository for existing secrets that may have been accidentally committed. Trivy is an excellent tool for this purpose.
 
@@ -409,6 +409,7 @@ chmod +x monitor-secrets.sh
 ### Development Workflow
 
 1. **Pre-commit Scanning**: Always scan before committing
+
    ```bash
    # Add to your development workflow
    trivy fs --scanners secret --quiet . && git commit -m "Your commit message"
@@ -417,6 +418,7 @@ chmod +x monitor-secrets.sh
 2. **Branch Protection**: Use GitHub/GitLab branch protection with required status checks
 
 3. **Developer Education**: Train team members on secret detection
+
    ```bash
    # Create a quick check alias
    echo 'alias secret-check="trivy fs --scanners secret --quiet ."' >> ~/.bashrc
