@@ -1,4 +1,4 @@
-# Git Crypt Guide v1.4.0
+# Git Crypt Guide v1.4.1
 
 A comprehensive guide for implementing Git-Crypt with GPG encryption for secure repository management.
 
@@ -62,6 +62,8 @@ echo "*.env filter=git-crypt diff=git-crypt" > .gitattributes
 git add .gitattributes
 git commit -m "feat: Adding the git-crypt attributes file"
 ```
+
+- Step 10 (final step): Create a sample `.env` file, add and commit it to your repository, then push your changes. Finally, verify that the file is encrypted in the repository.
 
 ## What is Git-Crypt?
 
